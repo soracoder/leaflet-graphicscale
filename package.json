@@ -7,11 +7,11 @@
     "test": "mocha",
     "build:js": "uglifyjs src/Leaflet.GraphicScale.js > dist/Leaflet.GraphicScale.min.js",
     "build:css": "sass --style compressed src/Leaflet.GraphicScale.scss > dist/Leaflet.GraphicScale.min.css",
-    "build": "npm run build:css && npm run build:js",
+    "build": "yarn run build:css && yarn run build:js",
     "dev:livereload": "live-reload --port 9991 ./demo ./dist",
-    "dev:watch": "onchange 'src/**/*.*' -- npm run build",
+    "dev:watch": "onchange 'src/**/*.*' -- yarn run build",
     "dev:serve": "http-server -p 9990 .",
-    "dev": "npm run build && parallelshell 'npm run dev:livereload -s' 'npm run dev:serve -s' 'npm run dev:watch -s'"
+    "dev": "yarn run build && yarn run dev:serve -s"
   },
   "repository": {
     "type": "git",

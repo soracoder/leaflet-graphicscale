@@ -13,7 +13,8 @@
 	var graphicScale = L.control.graphicScale({
 		doubleLine: true,
 		fill: 'hollow',
-        showSubunits: true
+        showSubunits: true,
+        format: 'feet'
 	}).addTo(map);
 
     var scaleText = L.DomUtil.create('div', 'scaleText' );

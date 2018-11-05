@@ -9,6 +9,7 @@ L.Control.GraphicScale = L.Control.extend({
         doubleLine: false,
         labelPlacement: 'auto',
         format: "meters", //options: "feet", "meters" //HOTFIX 20180810: Options for controlling the graphics scale format.
+        precision: 2,
         update: null //HOTFIX 20180810: Update function for manually updating the scale. When initially creating the graphicscale, be sure to assign it to an object. At the end of this overridden function use [thatobject]._update();
     },
 
@@ -377,7 +378,7 @@ L.Control.GraphicScale = L.Control.extend({
                 amount = units / 5280;
                 //If it's a fractional number, round to the nearest tenth for display purposes.
                 if (amount % 1 !== 0)
-                    amount = amount.toFixed(1);
+                    amount = amount.toFixed(this.options.precision);
             }
         }
         //Handle other options here by looking for this.options.format.
